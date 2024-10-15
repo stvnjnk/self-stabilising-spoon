@@ -3,6 +3,8 @@
 
 **Arduino-based project to assist people with Parkinson’s disease by stabilizing a spoon during meals.**
 
+![Self-Stabilizing Spoon](./Images/SPOON_FINAL_DRAWINGS_+_3D_(FINAL)_2024-Jun-11_06-04-31PM-000_CustomizedView7454801331.png)
+
 ---
 
 ## Table of Contents
@@ -55,7 +57,7 @@ This project requires several libraries, available in this repository or via the
 - **PID_v1.h**: Handles the proportional, integral, and derivative control for the servos.
 - **Servo.h**: Controls the movement of the servo motors.
 
-See the [`keywords.txt`](https://github.com/stvnjnk/self-stabilising-spoon/blob/main/Libraries/KalmanFilter-master/keywords.txt) for additional information about Kalman filter functions and PID setup. file for additional information about Kalman filter functions and PID setup.
+See the [`keywords.txt`](./Libraries/KalmanFilter-master/keywords.txt) for additional information about Kalman filter functions and PID setup. file for additional information about Kalman filter functions and PID setup.
 
 ---
 
