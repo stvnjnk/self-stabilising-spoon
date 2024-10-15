@@ -44,8 +44,6 @@ The **Self-Stabilizing Spoon** is a project designed to assist individuals with 
 - **9V Battery**
 - **Spoon and enclosure materials**
 
-Refer to the detailed [lab manual](./Self-Stabilizing_Spoon_Lab_Manual.pdf) for the full hardware setup.
-
 ---
 
 ## Libraries Used
@@ -121,7 +119,7 @@ void loop() {
 
 ## Usage
 
-1. Wire the hardware components as detailed in the [lab manual](./Self-Stabilizing_Spoon_Lab_Manual.pdf).
+1. Wire the hardware components according to the design.
 2. Upload the provided code to the Arduino Nano.
 3. Power the system using a 9V battery and observe the stabilization of the spoon as it compensates for hand movements.
 
