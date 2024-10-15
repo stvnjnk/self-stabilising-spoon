@@ -1,4 +1,3 @@
-
 # Self-Stabilizing Spoon
 
 **Arduino-based project to assist people with Parkinson’s disease by stabilizing a spoon during meals.**
@@ -14,7 +13,7 @@
 - [Components](#components)
 - [Libraries Used](#libraries-used)
 - [How It Works](#how-it-works)
-- [Code Example](#code-example)
+- [Code Improvements](#code-improvements)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -70,37 +69,18 @@ See the [`keywords.txt`](./Libraries/KalmanFilter-master/keywords.txt) for addit
 
 ---
 
-## Code Example
+## Code Improvements
 
-```cpp
-#include <Wire.h>
-#include <Kalman.h>
-#include <PID_v1.h>
-#include <Servo.h>
+Several improvements have been made to the original code to enhance readability, maintainability, and performance:
 
-Kalman kalmanX, kalmanY;
-Servo servo1, servo2;
-double InputX, OutputX, SetpointX;
-double InputY, OutputY, SetpointY;
-PID PIDX(&InputX, &OutputX, &SetpointX, 1, 0, 0, DIRECT);
-PID PIDY(&InputY, &OutputY, &SetpointY, 1, 0, 0, DIRECT);
+1. **Constants for Pins and Baud Rate**: Replaced hardcoded values with `#define` constants to allow easier modification of pin assignments and communication settings.
+2. **Improved Organization**: The `setup()` and `loop()` functions have been better structured to separate initialization and main functionality.
+3. **Modularized Functions**: Introduced helper functions such as `initializeKalmanFilters()` and `readIMUData()` for better code reusability and maintainability.
+4. **Servo Constraining**: The servo angles are constrained between 0 and 180 degrees to ensure they stay within the valid range.
+5. **Error Handling**: Included error handling for servo movements to avoid potential out-of-range values.
+6. **Comments and Clarity**: The code is better commented to improve understanding, especially in critical sections like sensor reading and servo control.
 
-void setup() {
-  Serial.begin(9600);
-  Wire.begin();
-  servo1.attach(2);
-  servo2.attach(3);
-  // Further setup...
-}
-
-void loop() {
-  // Get sensor data, apply Kalman filter and PID control
-  PIDX.Compute();
-  PIDY.Compute();
-  servo1.write(OutputX);
-  servo2.write(OutputY);
-}
-```
+**Note**: The improved code is not yet fully tested.
 
 ---
 
@@ -144,4 +124,3 @@ This project is licensed under the GNU General Public License v2.0. See the [LIC
 ## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues for improvements or bug fixes.
-
