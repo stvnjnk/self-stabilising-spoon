@@ -1,4 +1,4 @@
-# Self-Stabilizing Spoon
+# Self Stabilising Spoon
 
 **Arduino-based project to assist people with Parkinson’s disease by stabilizing a spoon during meals.**
 
@@ -13,12 +13,10 @@
 - [Components](#components)
 - [Libraries Used](#libraries-used)
 - [How It Works](#how-it-works)
-- [Code Improvements](#code-improvements)
 - [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
 - [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -69,21 +67,6 @@ See the [`keywords.txt`](./Libraries/KalmanFilter-master/keywords.txt) for addit
 
 ---
 
-## Code Improvements
-
-Several improvements have been made to the original code to enhance readability, maintainability, and performance:
-
-1. **Constants for Pins and Baud Rate**: Replaced hardcoded values with `#define` constants to allow easier modification of pin assignments and communication settings.
-2. **Improved Organization**: The `setup()` and `loop()` functions have been better structured to separate initialization and main functionality.
-3. **Modularized Functions**: Introduced helper functions such as `initializeKalmanFilters()` and `readIMUData()` for better code reusability and maintainability.
-4. **Servo Constraining**: The servo angles are constrained between 0 and 180 degrees to ensure they stay within the valid range.
-5. **Error Handling**: Included error handling for servo movements to avoid potential out-of-range values.
-6. **Comments and Clarity**: The code is better commented to improve understanding, especially in critical sections like sensor reading and servo control.
-
-**Note**: The improved code is not yet fully tested.
-
----
-
 ## Installation
 
 1. Clone this repository:
@@ -97,19 +80,11 @@ Several improvements have been made to the original code to enhance readability,
    - Servo Control (`Servo.h`)
    - Wire (for I2C communication)
 
----
+3. Wire the hardware components according to the design.
 
-## Usage
+4. Upload the provided code to the Arduino Nano.
 
-1. Wire the hardware components according to the design.
-2. Upload the provided code to the Arduino Nano.
-3. Power the system using a 9V battery and observe the stabilization of the spoon as it compensates for hand movements.
-
----
-
-## License
-
-This project is licensed under the GNU General Public License v2.0. See the [LICENSE](./gpl2.txt) file for details.
+5. Power the system using a 9V battery and observe the stabilisation of the spoon as it compensates for hand movements.
 
 ---
 
@@ -124,3 +99,9 @@ This project is licensed under the GNU General Public License v2.0. See the [LIC
 ## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests or open issues for improvements or bug fixes.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
